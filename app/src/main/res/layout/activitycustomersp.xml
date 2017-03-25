@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/loginb">
+
+
+    <Button
+        android:id="@+id/customerbtn"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="156dp"
+        android:background="@android:color/holo_blue_bright"
+        android:text="Customer"
+        android:textColor="#FFFFFF"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:id="@+id/serviceproviderbtn"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:background="@android:color/holo_orange_dark"
+        android:text="Service Provider"
+        android:textColor="#FFFFFF"
+        android:layout_below="@+id/customerbtn"
+        android:layout_alignLeft="@+id/customerbtn"
+        android:layout_alignStart="@+id/customerbtn"
+        android:layout_marginTop="129dp" />
+</RelativeLayout>
