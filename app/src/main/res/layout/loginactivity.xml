@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/loginb">
@@ -52,5 +53,16 @@
         android:textColor="#FFFFFF"
         android:background="@android:color/holo_orange_dark"
         android:text="Sign in" />
+    <com.google.android.gms.common.SignInButton
+
+        android:id="@+id/googleSignInBtn"
+        android:layout_height="45dp"
+        android:layout_width="200dp"
+        android:layout_below="@+id/signin"
+        android:foregroundGravity="center"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="30dp">
+    </com.google.android.gms.common.SignInButton>
+
 
 </RelativeLayout>

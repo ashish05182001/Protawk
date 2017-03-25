@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "606641243681",
+    "project_id": "protawk"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:606641243681:android:cf947fbd97a03ac4",
+        "android_client_info": {
+          "package_name": "sddtu.org.protawk"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "606641243681-dt1gm36lcphnfdcab561d99ci1ur8bdd.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "606641243681-19d1gsa71oibrmp321oocin5aauupbk4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "sddtu.org.protawk",
+            "certificate_hash": "f9e13dbd102894a0869ee22d899a22b3a50b3745"
+          }
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDmX9SPWVAtdU3iRgu-xe73Hytd3ISqUGE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 1
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

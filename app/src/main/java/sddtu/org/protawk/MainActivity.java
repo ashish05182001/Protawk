@@ -1,5 +1,8 @@
 package sddtu.org.protawk;
 
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.media.Image;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -11,6 +14,11 @@ import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 
@@ -20,6 +28,8 @@ import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
+    ImageView userImage;
+    TextView nametv,emailtv;
 
     String[] data={"Doctors","Lawyers","Career Counselers","Property Counsultants","Brand Counsaltants","Software Counsultant"};
 
@@ -33,6 +43,9 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
+        SharedPreferences sharedPreferences=getSharedPreferences("GoogleInt", Context.MODE_PRIVATE);
+        int googleInt=sharedPreferences.getInt("GInt",0);
 
      recyclerView=(RecyclerView)findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
@@ -48,6 +61,16 @@ public class MainActivity extends AppCompatActivity
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
+        View view=navigationView.getHeaderView(0);
+        nametv=(TextView)view.findViewById(R.id.nametv);
+        emailtv=(TextView)view.findViewById(R.id.emailtv);
+        userImage=(ImageView)view.findViewById(R.id.userimage);
+        if(googleInt==1){
+            nametv.setText(sharedPreferences.getString("GName","Protawk"));
+            emailtv.setText(sharedPreferences.getString("GEmail","Protawk"));
+            String image=sharedPreferences.getString("GPic","");
+            Glide.with(this).load(image).into(userImage);
+        }
         navigationView.setNavigationItemSelectedListener(this);
     }
 
