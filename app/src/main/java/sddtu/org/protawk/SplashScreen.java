@@ -24,7 +24,7 @@ public class SplashScreen extends Activity {
                 try {
 
                     sleep(3000);
-                    if(gInt==1){
+                    if(gInt==1||gInt==2){
                         Intent intent=new Intent(SplashScreen.this,MainActivity.class);
                         startActivity(intent);
                         finish();

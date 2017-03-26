@@ -71,6 +71,14 @@ public class MainActivity extends AppCompatActivity
             String image=sharedPreferences.getString("GPic","");
             Glide.with(this).load(image).into(userImage);
         }
+        if(googleInt==2){
+            String fName=sharedPreferences.getString("fbName","Protawk");
+            String fEmail=sharedPreferences.getString("fbEmail","Protawk");
+            String image=sharedPreferences.getString("fbPic","");
+           nametv.setText(fName);
+            emailtv.setText(fEmail);
+            Glide.with(this).load(image).into(userImage);
+        }
         navigationView.setNavigationItemSelectedListener(this);
     }
 
