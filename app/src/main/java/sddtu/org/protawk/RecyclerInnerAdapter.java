@@ -31,7 +31,6 @@ public class RecyclerInnerAdapter extends RecyclerView.Adapter<RecyclerInnerAdap
                 @Override
                 public void onClick(View v) {
 
-
                 }
             });
         }

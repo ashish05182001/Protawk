@@ -28,8 +28,8 @@ public class CustomerSPActivity extends Activity {
         SPChoose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent=new Intent(CustomerSPActivity.this,LoginActivity.class);
-                startActivity(intent);
+//                Intent intent=new Intent(CustomerSPActivity.this,RegisterSp.class);
+//                startActivity(intent);
             }
         });
     }

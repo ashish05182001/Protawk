@@ -42,7 +42,6 @@ import org.w3c.dom.Text;
 
 import java.util.Arrays;
 
-
 /**
  * Created by Dell on 3/16/2017.
  */
@@ -77,20 +76,19 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
 
         callbackManager=CallbackManager.Factory.create();
 
-        Log.d("loginnnnnn","jjjgjhjhgjg");
 
         fbLoginBtn.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
             @Override
             public void onSuccess(final LoginResult loginResult) {
 
-                Log.d("logiiiin","shdshfshf");
+
                 GraphRequest request = GraphRequest.newMeRequest(loginResult.getAccessToken(),
                         new GraphRequest.GraphJSONObjectCallback() {
                             @Override
                             public void onCompleted(JSONObject object, GraphResponse response) {
 
                                 signInCheckInt=2;
-                                Log.d("SIGNININT","2");
+
                                 String profileImageUrl = ImageRequest.getProfilePictureUri(object.optString("id"), 500, 500).toString();
                                 SharedPreferences sharedPreferences=getSharedPreferences("GoogleInt", Context.MODE_PRIVATE);
                                 SharedPreferences.Editor editor=sharedPreferences.edit();
@@ -100,7 +98,6 @@ public class LoginActivity extends AppCompatActivity implements GoogleApiClient.
 
                                 try {
 
-                                    Log.d("INSIDE TRY","shdshfshf");
                                     String  fbname = object.getString("name");
                                     Log.d("FB NAME",fbname);
                                     String  fbemail = loginResult.getAccessToken().getUserId();

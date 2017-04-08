@@ -6,7 +6,18 @@ package sddtu.org.protawk;
 
 public class CardData {
     String t1;
-    CardData(String text1){
+
+    public Integer getImgRes() {
+        return imgRes;
+    }
+
+    public void setImgRes(Integer imgRes) {
+        this.imgRes = imgRes;
+    }
+
+    Integer imgRes;
+    CardData(String text1,Integer imgRess){
+        imgRes = imgRess;
         t1=text1;
     }
 

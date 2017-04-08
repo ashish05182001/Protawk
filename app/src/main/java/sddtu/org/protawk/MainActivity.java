@@ -31,7 +31,8 @@ public class MainActivity extends AppCompatActivity
     ImageView userImage;
     TextView nametv,emailtv;
 
-    String[] data={"Doctors","Lawyers","Career Counselers","Property Counsultants","Brand Counsaltants","Software Counsultant"};
+    String[] data={"Doctors","Lawyers","Career Counselers","Property Consultants","Brand Consaltants","Software Consultant"};
+    Integer[] imgData = {R.drawable.doctor,R.drawable.lawyer,R.drawable.career,R.drawable.house,R.drawable.brand,R.drawable.software};
 
     private RecyclerView recyclerView;
     private RecyclerView.Adapter recyclerAdapter;
@@ -46,8 +47,10 @@ public class MainActivity extends AppCompatActivity
 
         SharedPreferences sharedPreferences=getSharedPreferences("GoogleInt", Context.MODE_PRIVATE);
         int googleInt=sharedPreferences.getInt("GInt",0);
+        int linkedInt = getIntent().getIntExtra("linkedInt" ,0);
 
-     recyclerView=(RecyclerView)findViewById(R.id.recyclerView);
+
+        recyclerView=(RecyclerView)findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
         recyclerManager=new GridLayoutManager(MainActivity.this,2);
         recyclerView.setLayoutManager(recyclerManager);
@@ -65,6 +68,13 @@ public class MainActivity extends AppCompatActivity
         nametv=(TextView)view.findViewById(R.id.nametv);
         emailtv=(TextView)view.findViewById(R.id.emailtv);
         userImage=(ImageView)view.findViewById(R.id.userimage);
+        if (linkedInt == 1) {
+            SharedPreferences sharedPreferences1 = getSharedPreferences("LinkedProfile", Context.MODE_PRIVATE);
+            nametv.setText(sharedPreferences1.getString("name", "Service Provider"));
+            emailtv.setText(sharedPreferences1.getString("email", "sp@gmail.com"));
+            String image = sharedPreferences1.getString("pictureUrl", "Not found");
+            Glide.with(this).load(image).into(userImage);
+        }
         if(googleInt==1){
             nametv.setText(sharedPreferences.getString("GName","Protawk"));
             emailtv.setText(sharedPreferences.getString("GEmail","Protawk"));
@@ -75,7 +85,7 @@ public class MainActivity extends AppCompatActivity
             String fName=sharedPreferences.getString("fbName","Protawk");
             String fEmail=sharedPreferences.getString("fbEmail","Protawk");
             String image=sharedPreferences.getString("fbPic","");
-           nametv.setText(fName);
+            nametv.setText(fName);
             emailtv.setText(fEmail);
             Glide.with(this).load(image).into(userImage);
         }
@@ -96,7 +106,7 @@ public class MainActivity extends AppCompatActivity
     private ArrayList<CardData> getDataSet(){
         ArrayList<CardData> results=new ArrayList<CardData>();
         for(int i=0;i<data.length;i++){
-            CardData cardData=new CardData(data[i]);
+            CardData cardData=new CardData(data[i],imgData[i]);
             results.add(i,cardData);
         }
         return results;

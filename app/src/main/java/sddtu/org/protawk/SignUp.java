@@ -14,6 +14,6 @@ public class SignUp extends AppCompatActivity {
         ActionBar actionBar = getSupportActionBar();
 
         getSupportActionBar().setTitle("Register Here");
-        
+
     }
 }

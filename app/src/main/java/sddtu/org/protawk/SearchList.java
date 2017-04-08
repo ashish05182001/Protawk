@@ -34,8 +34,6 @@ public class SearchList extends AppCompatActivity {
         adapter=new RecyclerInnerAdapter(getDataaSet());
         recyclerView.setAdapter(adapter);
 
-
-
     }
 
     private ArrayList<CardList> getDataaSet(){

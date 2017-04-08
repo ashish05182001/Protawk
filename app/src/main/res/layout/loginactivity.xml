@@ -3,13 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/loginb">
+    android:background="@drawable/bback">
 
     <EditText
         android:id="@+id/editText2"
         android:layout_width="250dp"
         android:layout_height="40dp"
-
         android:layout_weight="1"
         android:alpha="1"
         android:gravity="center"
@@ -47,14 +46,13 @@
         android:layout_alignStart="@+id/editText3"
         android:layout_below="@+id/editText3"
         android:layout_marginTop="60dp"
-
         android:textColor="#FFFFFF"
         android:background="@android:color/holo_orange_dark"
         android:text="Sign in" />
 
     <com.google.android.gms.common.SignInButton
         android:id="@+id/googleSignInBtn"
-        android:layout_height="45dp"
+        android:layout_height="65dp"
         android:layout_width="200dp"
         android:layout_below="@+id/signin"
         android:foregroundGravity="center"
@@ -63,14 +61,14 @@
     </com.google.android.gms.common.SignInButton>
 
     <com.facebook.login.widget.LoginButton
-        android:layout_width="200dp"
-        android:layout_height="45dp"
+        android:layout_width="220dp"
+        android:layout_height="75dp"
         android:gravity="center"
         android:layout_marginTop="38dp"
         android:id="@+id/fbSignInBtn"
         android:layout_below="@+id/googleSignInBtn"
         android:layout_alignLeft="@+id/googleSignInBtn"
         android:layout_alignStart="@+id/googleSignInBtn">
-        </com.facebook.login.widget.LoginButton>
+    </com.facebook.login.widget.LoginButton>
 
 </RelativeLayout>
