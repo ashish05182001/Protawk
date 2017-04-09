@@ -13,7 +13,7 @@
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -29,10 +29,14 @@
             android:name="com.facebook.sdk.ApplicationId"
             android:value="@string/facebook_app_id" />
 
-        <activity android:name=".SignUp"
-            android:theme="@style/AppTheme1"
-            >
-        </activity>
+        <activity
+            android:name=".SignUp"
+            android:theme="@style/AppTheme1"></activity>
+
+        <activity
+            android:name=".SPprrofile"
+            android:parentActivityName=".LoginActivity"
+            android:theme="@style/AppTheme.NoActionBar1"></activity>
     </application>
 
 </manifest>
