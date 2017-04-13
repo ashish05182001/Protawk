@@ -3,6 +3,11 @@
     package="sddtu.org.protawk">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <application
         android:allowBackup="true"
@@ -37,6 +42,27 @@
             android:name=".SPprrofile"
             android:parentActivityName=".LoginActivity"
             android:theme="@style/AppTheme.NoActionBar1"></activity>
+
+        <service android:name=".SinchService"></service>
+
+        <activity
+            android:name=".LoginSinch"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".CallScreenActivity" />
+        <activity
+            android:name=".IncomingCallScreenActivity"
+            android:noHistory="true"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".PlaceCallActivity"
+            android:screenOrientation="portrait" />
+
     </application>
 
 </manifest>

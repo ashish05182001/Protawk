@@ -16,16 +16,17 @@ public class RecyclerInnerAdapter extends RecyclerView.Adapter<RecyclerInnerAdap
 
     private ArrayList<CardList> arraylList;
 
-    public RecyclerInnerAdapter(ArrayList<CardList> arrayList){
-        this.arraylList=arrayList;
+    public RecyclerInnerAdapter(ArrayList<CardList> arrayList) {
+        this.arraylList = arrayList;
     }
 
-    public class CardListHolder extends RecyclerView.ViewHolder{
+    public class CardListHolder extends RecyclerView.ViewHolder {
 
         TextView textViewinner;
+
         public CardListHolder(final View itemView) {
             super(itemView);
-            textViewinner=(TextView)itemView.findViewById(R.id.textViewinner);
+            textViewinner = (TextView) itemView.findViewById(R.id.textViewinner);
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -35,18 +36,21 @@ public class RecyclerInnerAdapter extends RecyclerView.Adapter<RecyclerInnerAdap
             });
         }
     }
+
     @Override
     public RecyclerInnerAdapter.CardListHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-        View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.cardlayout2,parent,false);
-        CardListHolder cardListHolder=new CardListHolder(view);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.cardlayout2, parent, false);
+        CardListHolder cardListHolder = new CardListHolder(view);
         return cardListHolder;
     }
+
     @Override
     public void onBindViewHolder(RecyclerInnerAdapter.CardListHolder holder, int position) {
         holder.textViewinner.setText(arraylList.get(position).getT2());
     }
+
     @Override
     public int getItemCount() {
-        return arraylList.size() ;
+        return arraylList.size();
     }
 }
